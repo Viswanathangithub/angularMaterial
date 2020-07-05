@@ -1,12 +1,12 @@
 <div fxLayoutAlign="center center" fxFlexFill>
     <mat-card fxFlex="25">
         <mat-toolbar color="primary">Login Page</mat-toolbar>
-        <form fxLayoutAlign="stretch" fxLayout="column" class="login-form" (ngSubmit)="loginUser($event)">
+        <form #f="ngForm" (ngSubmit)="onSubmit(f)" fxLayoutAlign="stretch" fxLayout="column" class="login-form" novalidate>
             <mat-form-field>
-              <input matInput placeholder="UserName" >
+              <input matInput required name="username" [(ngModel)]="username" placeholder="UserName">
             </mat-form-field>
             <mat-form-field>
-                <input matInput type="password" placeholder="Password" >
+                <input matInput name="password" [(ngModel)]="password" type="password" placeholder="Password">
               </mat-form-field>
               <button mat-button type="submit">Login</button>
           </form>
