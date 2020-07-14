@@ -13,6 +13,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { HomeComponent } from './home/home.component';
+import { HttpClientModule } from '@angular/common/http'
 
 
 @NgModule({
@@ -32,7 +33,8 @@ import { HomeComponent } from './home/home.component';
     MatCardModule,
     MatToolbarModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,9 +1,28 @@
 <div fxLayoutAlign="center center" fxFlexFill>
-    <mat-card fxFlex="40">
-        <mat-toolbar color="primary">Upload Page</mat-toolbar>
+    <mat-card fxFlex="60">
+        <mat-toolbar color="primary">Signature Data</mat-toolbar>
         <br>
-        <form fxLayoutAlign="stretch" fxLayout="column"> 
-            <input class="ng-hide" id="input-file-id" type="file" />
-        </form>
+        <form #f="ngForm" (ngSubmit)="onSubmit(f)" fxLayoutAlign="stretch" fxLayout="column" class="login-form" novalidate>
+        <mat-form-field>
+            <input matInput required name="algorithm" [(ngModel)]="algorithm" placeholder="algorithm">
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+            <input matInput required name="data" [(ngModel)]="data" placeholder="data">
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+            <input matInput required name="publicExp" [(ngModel)]="publicExp" placeholder="publicExp">
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+            <input matInput required name="publicKey" [(ngModel)]="publicKey" placeholder="publicKey">
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+            <input matInput required name="base64Encode" [(ngModel)]="base64Encode" placeholder="base64Encode">
+        </mat-form-field>
+        <button mat-button type="submit">Submit</button>
+    </form>
     </mat-card>
 </div>
