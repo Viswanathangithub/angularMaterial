@@ -25,7 +25,7 @@ export class HomeComponent implements OnInit {
   onSubmit(f: NgForm) {
     let headers = new HttpHeaders({
       'Content-Type': 'application/json',
-      'Access-Control-Allow-Origin': 'http://192.168.0.18:8080',
+      'Access-Control-Allow-Origin': 'http://localhost:8080',
       'Access-Control-Allow-Methods': 'POST',
       'Access-Control-Allow-Headers': '*',
       'Access-Control-Allow-Credentials' : 'true'
@@ -36,7 +36,7 @@ export class HomeComponent implements OnInit {
       publicKey: this.publicKey, base64Encode: this.base64Encode
     };
 
-    return this.http.post("http://192.168.0.18:8080/validate", signInfo, {headers : headers, responseType:'text'})
+    return this.http.post("/validate/", signInfo, {headers : headers, responseType:'text'})
     .subscribe((data:string) => {
       console.log(data);
       this.response = data;
